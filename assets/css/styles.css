@@ -6,55 +6,55 @@ html{
 }
 
 body {
-	margin: 1em;
-	background-color: black;
-	color: yellow;
-	font-size: 5rem;
-	overflow:hidden;
-	background: url("../img/Flowers.gif");
-	background-repeat: no-repeat;
-	background-position: left top;
-	background-size: cover;
+	margin: 0;
+	height: 100vh;
+	font-family: serif;
+	color: black;
+	font-size: 2rem;
+}
+.container {
+	display: flex;
+	height: 100%;
+}
+.left {
+	flex: 1;
+	background: url("../img/Flowers.gif") no-repeat center/cover;
+}
+.right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 3rem;
+	text-align: right;
+}
+.type {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 2px solid black;
+}
+.grief {
+	width: 0;
+	animation: typingGrief 3s steps(5, end) forwards,
+	           blink 1s infinite;
+}
+.pain {
+	width: 0;
+	animation: typingPain 3s steps(4, end) forwards 3.5s,
+	           blink 1s infinite;
+}
+@keyframes typingGrief {
+	from { width: 0 }
+	to { width: 5ch }
 }
 
-.grid-container {
-	display: grid;
-	/*grid-template-columns: 1fr 1fr; */
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 2rem;
-	margin: 10% 4rem 0 4rem;
+@keyframes typingPain {
+	from { width: 0 }
+	to { width: 4ch }
 }
 
-div {
-	transition-property: transform;
-	transition-duration: 1s;
-
-}
-.last {
-
-	
-	padding-bottom: 2rem;
-	border-bottom: 2px solid rgb(220,200,180);
-}
-/*
-
-.last:hover {
-	animation-name: growAndGlow;
-	animation-duration: 3s;
-}
-*/
-@keyframes growAndGlow {
-	from {
-		color: whitesmoke;
-	}
-
-	50% {
-		transform: skew(30deg,30deg);
-		color: dogerblue;
-	}
-
-	to {
-		transform: scale(3);
-		color: red;
-	}
+@keyframes blink {
+	50% { border-color: transparent }
 }
