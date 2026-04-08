@@ -35,12 +35,12 @@ body {
 	white-space: nowrap;
 	border-right: 2px solid black;
 }
-.grief {
+.grief:hover {
 	width: 0;
 	animation: typingGrief 3s steps(5, end) forwards,
 	           blink 1s infinite;
 }
-.pain {
+.pain:hover {
 	width: 0;
 	animation: typingPain 3s steps(4, end) forwards 3.5s,
 	           blink 1s infinite;
