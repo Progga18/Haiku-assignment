@@ -29,6 +29,11 @@ body {
 	padding: 3rem;
 	text-align: right;
 }
+p {
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
 .type {
 	display: inline-block;
 	overflow: hidden;
